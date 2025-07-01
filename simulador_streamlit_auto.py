@@ -17,7 +17,16 @@ if "last_update" not in st.session_state:
     st.session_state.last_update = time.time()
 
 # Configuração da página
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
+import os
+
+icon_path = os.path.join("images", "icon.png")
+
+st.set_page_config(
+    page_title="OEF - G2",
+    page_icon=icon_path,
+    layout="wide"
+)
 
 # === Cabeçalho ===
 header_path = os.path.join("images", "Header.png")
