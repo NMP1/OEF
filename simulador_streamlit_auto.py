@@ -81,7 +81,12 @@ if st.session_state.auto:
 # === Conteúdo da Fase ===
 fase_escolhida = fases[st.session_state.fase_index]
 
-st.subheader(f"Fase {fase_escolhida} – Layout")
+#st.subheader(f"Fase {fase_escolhida} – Layout")
+st.markdown(
+    f"<h3 style='text-align: center;'>Fase {fase_escolhida} – Layout</h3>",
+    unsafe_allow_html=True
+)
+
 img_path = os.path.join("Layout", f"{fase_escolhida}.png")
 if os.path.exists(img_path):
     st.image(img_path, use_container_width=True)
@@ -92,16 +97,16 @@ else:
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("Trabalhos da Fase")
+    st.subheader("Descrição dos Trabalhos")
     st.text(trabalhos.get(fase_escolhida, "Sem informação de trabalhos."))
 
 with col2:
-    st.subheader("Gráfico de Gantt")
+    st.subheader("Planeamento")
     gantt_path = os.path.join("Planeamento", f"{fase_escolhida}.png")
     if os.path.exists(gantt_path):
         st.image(gantt_path, use_container_width=True)
     else:
-        st.info("Sem Gantt nesta fase.")
+        st.info(" ")
 
 # === Rodapé ===
 footer_path = os.path.join("images", "Footer.png")
