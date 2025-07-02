@@ -97,7 +97,7 @@ else:
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("Descrição dos Trabalhos")
+    st.subheader("Descrição")
     st.text(trabalhos.get(fase_escolhida, "Sem informação de trabalhos."))
 
 with col2:
