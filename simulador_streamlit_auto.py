@@ -90,9 +90,16 @@ st.markdown(
 img_path = os.path.join("Layout", f"{fase_escolhida}.png")
 if os.path.exists(img_path):
     st.image(img_path, use_container_width=True)
+
+    with st.expander("🛈 Legenda do layout", expanded=False):
+        legenda_img = os.path.join("images", "legenda.png")
+        if os.path.exists(legenda_img):
+            st.image(legenda_img, use_column_width=True)
+        else:
+            st.warning("Legenda não encontrada.")
 else:
     st.warning("Imagem de layout não disponível.")
-
+    
 # Trabalhos e Gantt
 col1, col2 = st.columns(2)
 
